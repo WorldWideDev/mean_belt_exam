@@ -1,0 +1,22 @@
+<a href="#/create">Create a New Poll</a> | <a href="#/">Logout</a>
+<h1>Welcome, {{DC.curr_user.name}}</h1>
+<h2>Current Polls:</h2>
+<table class='table table-bordered'>
+	<input type='text' ng-model='filter' placeholder='search'>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Survey Question</th>
+			<th>Date Posted</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat='s in DC.surveys | filter: filter'>
+			<td>{{s._user.name}}</td>
+			<td><a href="#/poll/{{s._id}}">{{s.question}}</a></td>
+			<td>{{s.createdAt | date: "MMMM, d yyyy 'at' h:mma"}}</td>
+			<td><button ng-click='DC.remove(s)'>DEL</button></td>
+		</tr>
+	</tbody>
+</table>

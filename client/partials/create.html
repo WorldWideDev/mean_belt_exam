@@ -1,0 +1,13 @@
+<a href="#/dashboard">Cancel</a>
+<h1>Put the question and options here:</h1>
+<p>{{CC.curr_user.name}}</p>
+<p>{{CC.err}}</p>
+<p>{{CC.err2}}</p>
+<form id='surveyForm' class='form-group'>
+Question: <br><input type='text' ng-model='CC.new_survey.question'><br>
+Option 1: <br><input type='text' ng-model='CC.new_survey.option1'><br>
+Option 2: <br><input type='text' ng-model='CC.new_survey.option2'><br>
+Option 3: <br><input type='text' ng-model='CC.new_survey.option3'><br>
+Option 4: <br><input type='text' ng-model='CC.new_survey.option4'><br>
+</form>
+<button ng-click='CC.create()'>Create Poll</button>

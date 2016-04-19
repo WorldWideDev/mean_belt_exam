@@ -1,0 +1,19 @@
+<h1>{{PC.survey.question}}</h1>
+<h3>Click the vote button to choose one</h3>
+<a href="#/dashboard">Cancel</a>
+<table class='table table-bordered'>
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th>Current Votes</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat='o in PC.opt'>
+			<td>{{o.text}}</td>
+			<td>{{o.votes}}</td>
+			<td><button ng-click='PC.vote(o)'>VOTE</button></td>
+		</tr>
+	</tbody>
+</table>
